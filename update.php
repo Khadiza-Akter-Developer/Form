@@ -3,13 +3,13 @@ include "config.php";
 
 if(isset($_POST['update'])){
     $firstname = $_POST['firstname'];
-    $user_id = $_POST['id'];
+    $user_id = $_POST['user_id'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $gender = $_POST['gender'];
     $password = $_POST['password'];
 
-    $sql = "UPDATE 'user' SET 'firstname' = '$firstname', 'lastname' = '$lastname', 'email' = '$email', 'password' = '$password', 'gender'= '$gender' WHERE 'id'='$user_id'";
+    $sql = "UPDATE `user` SET `firstname` = '$firstname', `lastname` = '$lastname', `email` = '$email', `password` = '$password', `gender`= '$gender' WHERE `id`='$user_id'";
 
     $result = $conn->query($sql);
 
@@ -17,15 +17,15 @@ if(isset($_POST['update'])){
         echo "Record Updated Successfully";
     }
     else{
-        echo "Error:".$sql . "<br>" . $conn->error;
+        echo "Error:". $sql . "<br>" . $conn->error;
     }
 
 }
 
-if(isset($_GET['id'])){
+if(isset($_GET['id'])) {
     $user_id = $_GET['id'];
 
-    $sql = "SELECT *FROM 'user' WHERE 'id'";
+    $sql = "SELECT * FROM `user` WHERE `id`='$user_id'";
 
     $result  = $conn->query($sql);
 
@@ -62,12 +62,21 @@ if(isset($_GET['id'])){
                 <input type="password" name="password" value="<?php echo $password;?>">
                 <br>
                 Gender:<br>
-                <input type="radio" name="gender" value="Male" <?php if($gender == 'Male'){echo "checked";}?> Male
-                <input type="radio" name="gender" value="Female" <?php if($gender == 'Female'){echo "checked";}?> Female
+                <input type="radio" name="gender" value="Male" <?php if($gender == 'Male'){echo "checked";}?>>
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="Female" <?php if($gender == 'Female'){echo "checked";}?>>
+                <label for="female">Female</label>
                 <br>
                 <br>
                 <input type="submit" value="Update" name="update">
             </fieldset>
         </form>
+        </body>
+       </html>
+
+       <?php
+    }else{
+        header('Location: view.php');
     }
 }
+?>

@@ -69,6 +69,7 @@ if(isset($_GET['id'])) {
                 <br>
                 <br>
                 <input type="submit" value="Update" name="update">
+                <a href="view.php" class="back-list">Back To List</a>
             </fieldset>
         </form>
         </body>

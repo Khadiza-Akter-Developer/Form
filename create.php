@@ -29,6 +29,18 @@ if(isset($_POST['submit'])){
 
 <!DOCTYPE html>
 <html>
+    <head>
+        <style>
+    .back-button {
+            background-color: lightblue;
+            color: black;
+            margin-left: 10px;
+            padding: 5px 5px;
+            border: none;
+            border-radius: 5px;
+    }
+        </style>
+    </head>
     <body>
         <h2>Registration form</h2>
         <form action="" method="POST">
@@ -46,6 +58,8 @@ if(isset($_POST['submit'])){
                 <input type="radio" name="gender" value="Male"> Male
                 <input type="radio" name="gender" value="Female"> Female<br><br>
                 <input type="submit" name="submit" value="Submit">
+                <a href="view.php" class="back-button">Back to List</a>
+
             </fieldset>
         </form>
     </body>

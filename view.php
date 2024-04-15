@@ -12,10 +12,31 @@ $result = $conn->query($sql);
     <head>
         <title>View Page</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <style>
+             .container {
+            padding: 10px;
+        }
+        h2 {
+            padding: 10px;
+        }
+        .add-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        </style>
     </head>
     <body>
         <div class="container">
-            <h2>User</h2>
+            <h2>Users</h2>
+
+            <a href="create.php" class="add-button">Add Users</a>
             <table class="table">
                 <thead>
                     <tr>

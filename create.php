@@ -10,10 +10,10 @@ if(isset($_POST['submit'])){
         $password = $_POST['password'];
         $gender = $_POST['gender'];
 
-        // Prepare the SQL statement
+        
         $sql = "INSERT INTO `user` (`firstname`, `lastname`, `email`, `password`, `gender`) VALUES ('$first_name', '$last_name', '$email', '$password', '$gender')";
 
-        // Execute the query
+        // Execute query
         if($conn->query($sql) === TRUE){
             echo "New record created successfully";
         } else{

@@ -2,7 +2,7 @@
 include "config.php";
 
 if(isset($_POST['submit'])){
-    // Check if all required fields are set
+
     if(isset($_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['password'], $_POST['gender'])){
         $first_name = $_POST['firstname'];
         $last_name = $_POST['lastname'];
